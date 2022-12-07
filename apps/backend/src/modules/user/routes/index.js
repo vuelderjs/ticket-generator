@@ -1,3 +1,9 @@
+import { check } from 'express-validator'
+
+import {
+    inputRoleIsValidRole,
+    validationResult} from '../middlewares'
+
 import {
     createUserController,
     fetchUsersController,
@@ -19,7 +25,12 @@ router.get('/paginateUsers', paginateUsersController)
 
 //POST
 
-router.post('/createUser', createUserController)
+router.post('/createUser', 
+    check('email').isEmail(), 
+    check('password').isLength({min: 8}), 
+    inputRoleIsValidRole,
+    validationResult, 
+    createUserController)
 
 //PUT
 

@@ -10,6 +10,7 @@ export class Server{
 
     init(){
         this.app = express()
+        this.app.use(express.json())
     }
 
     connectToDataBase(){
