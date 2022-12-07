@@ -19,7 +19,7 @@ export class Server{
     routesManagement(){
         this.app.get(this.apiRoute + '/ping', (req, res) => res.send('pong'))
         this.app.use(this.apiRoute + '/ticket', require('../modules/ticket/routes'))
-        this.app.use(this.apiRoute, require('../modules/user/routes'))
+        this.app.use(this.apiRoute + '/user', require('../modules/user/routes'))
     }
 
     start(){
