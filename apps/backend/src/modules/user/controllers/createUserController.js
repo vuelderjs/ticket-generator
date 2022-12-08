@@ -1,13 +1,13 @@
-import { checkRoleFromToken } from '../handlers/authorizationHandlers'
+import { checkPermissionFromToken } from '../handlers/authorizationHandlers'
 import {createUser} from '../services'
 
 import {CREATE_USER, SUPER_USER} from '../../permissions'
 
 export const createUserController = async(request, response) => {
     const {authorization} = request.headers
-    let resultCheckRoleFromToken = null
+    let resultCheckPermissionFromToken = null
     try {
-        resultCheckRoleFromToken = checkRoleFromToken(authorization, [CREATE_USER, SUPER_USER])
+        resultCheckPermissionFromToken = checkPermissionFromToken(authorization, [CREATE_USER, SUPER_USER])
     } catch (error) {
         return response.status(500).json({
             title: 'Create User Controller error',
@@ -17,7 +17,7 @@ export const createUserController = async(request, response) => {
     
 
     
-    if(resultCheckRoleFromToken){
+    if(resultCheckPermissionFromToken){
         const {email, password, role} = request.body
         try {
             const user = await createUser({email, password, role})  

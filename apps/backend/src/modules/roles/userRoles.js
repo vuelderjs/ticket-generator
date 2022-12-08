@@ -1,0 +1,48 @@
+import {
+    //USER PERMISSIONS
+    CREATE_USER,
+    UPDATE_USER,
+    SHOW_USER,
+    DELETE_USER,
+    SUPER_USER,
+
+    //TOKEN PERMISSIONS
+    CREATE_TOKEN,
+    UPDATE_TOKEN,
+    SHOW_TOKEN,
+    DELETE_TOKEN,
+    SUPER_TOKEN
+} from '../permissions'
+
+export const ADMIN_ROLE = [
+    CREATE_USER,
+    UPDATE_USER,
+    SHOW_USER,
+    DELETE_USER,
+    SUPER_USER,
+    CREATE_TOKEN,
+    UPDATE_TOKEN,
+    SHOW_TOKEN,
+    DELETE_TOKEN,
+    SUPER_TOKEN
+]
+
+export const DEFAULT_ROLE = [
+    SHOW_USER
+]
+
+export const VUELDER_ROLE = [
+    CREATE_TOKEN,
+    UPDATE_TOKEN,
+    SHOW_TOKEN,
+    DELETE_TOKEN,
+    SUPER_TOKEN
+]
+
+export const BRICKERZ_ROLE = [
+    CREATE_TOKEN,
+    UPDATE_TOKEN,
+    SHOW_TOKEN,
+    DELETE_TOKEN,
+    SUPER_TOKEN
+]
