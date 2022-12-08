@@ -10,7 +10,6 @@ export class Server{
     }
 
     init(){
-        require('../database')
         this.app = express()
         this.app.use(express.json())
     }
@@ -20,7 +19,7 @@ export class Server{
     }
 
     routesManagement(){
-        this.app.get(this.apiRoute + '/ping', (req, res) => res.send('pong'))
+        this.app.get(this.apiRoute + '/ping', (_, res) => res.send('pong'))
         this.app.use(this.apiRoute + '/ticket', require('../modules/ticket/routes'))
         this.app.use(this.apiRoute + '/user', require('../modules/user/routes'))
     }

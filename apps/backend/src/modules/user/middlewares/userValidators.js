@@ -12,7 +12,7 @@ import {
 export const inputRoleIsValidRole = (request, response, next) => {
     const { role } = request.body
 
-    if([CREATE_USER, UPDATE_USER, SHOW_USER, DELETE_USER, SUPER_USER].includes(role)) return next()
+    if(['ADMIN_ROLE', 'DEFAULT_ROLE', 'VUELDER_ROLE', 'BRICKERZ_ROLE'].includes(role)) return next()
     
     return response.status(400).json({
         error: 'Role not found'

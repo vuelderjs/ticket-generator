@@ -1,3 +1,5 @@
+import { check } from 'express-validator'
+
 import {
     createTicketController,
     fetchTicketsController,
@@ -19,7 +21,12 @@ router.get('/paginateTickets', paginateTicketsController)
 
 //POST
 
-router.post('/createTicket', createTicketController)
+router.post('/createTicket', 
+    check('type').isString(),
+    check('project').isString(),
+    check('sprint').isNumeric(),
+    check('title').isString(),
+    createTicketController)
 
 //PUT
 

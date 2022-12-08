@@ -1,0 +1,5 @@
+export const CREATE_TICKET = 'CREATE_USER'
+export const UPDATE_TICKET = 'UPDATE_USER'
+export const SHOW_TICKET = 'SHOW_USER'
+export const DELETE_TICKET = 'DELETE_USER'
+export const SUPER_TICKET = 'SUPER_USER'

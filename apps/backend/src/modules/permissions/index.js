@@ -7,12 +7,12 @@ import {
 } from './userPermissions'
 
 import {
-    CREATE_TOKEN,
-    UPDATE_TOKEN,
-    SHOW_TOKEN,
-    DELETE_TOKEN,
-    SUPER_TOKEN
-} from './tokenPermissions'
+    CREATE_TICKET,
+    UPDATE_TICKET,
+    SHOW_TICKET,
+    DELETE_TICKET,
+    SUPER_TICKET
+} from './ticketPermissions'
 
 export {
     //USER PERMISSIONS
@@ -22,10 +22,10 @@ export {
     DELETE_USER,
     SUPER_USER,
 
-    //TOKEN PERMISSIONS
-    CREATE_TOKEN,
-    UPDATE_TOKEN,
-    SHOW_TOKEN,
-    DELETE_TOKEN,
-    SUPER_TOKEN
+    //TICKET PERMISSIONS
+    CREATE_TICKET,
+    UPDATE_TICKET,
+    SHOW_TICKET,
+    DELETE_TICKET,
+    SUPER_TICKET
 }
