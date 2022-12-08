@@ -8,6 +8,7 @@ import {
     SUPER_USER
 } from '../../permissions'
 
+
 export const inputRoleIsValidRole = (request, response, next) => {
     const { role } = request.body
 

@@ -1,0 +1,5 @@
+export const CREATE_TOKEN = 'CREATE_USER'
+export const UPDATE_TOKEN = 'UPDATE_USER'
+export const SHOW_TOKEN = 'SHOW_USER'
+export const DELETE_TOKEN = 'DELETE_USER'
+export const SUPER_TOKEN = 'SUPER_USER'

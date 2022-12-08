@@ -2,14 +2,17 @@ import { check } from 'express-validator'
 
 import {
     inputRoleIsValidRole,
-    validationResult} from '../middlewares'
+    validationResult,
+    thatEmailDoesNotExist} from '../middlewares'
 
 import {
     createUserController,
     fetchUsersController,
     findUserController,
     paginateUsersController,
-    updateUserController } from '../controllers'
+    updateUserController,
+    loginUserController,
+    authenticationUserController } from '../controllers'
 
 import { Router } from 'express'
 
@@ -27,10 +30,19 @@ router.get('/paginateUsers', paginateUsersController)
 
 router.post('/createUser', 
     check('email').isEmail(), 
-    check('password').isLength({min: 8}), 
+    check('password').isLength({min: 8}),
+    thatEmailDoesNotExist, 
     inputRoleIsValidRole,
     validationResult, 
     createUserController)
+
+router.post('/loginUser', 
+    check('email').isEmail(), 
+    check('password').isLength({min: 8}), 
+    validationResult, 
+    loginUserController)
+
+router.post('/authUser', authenticationUserController)
 
 //PUT
 

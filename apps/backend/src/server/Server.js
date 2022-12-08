@@ -1,5 +1,6 @@
 import express from 'express'
 import {DefaultLogger as winston} from '@dracul/logger-backend'
+import { connectToDatabase } from '../database'
 
 export class Server{
     constructor(port, apiRoute){
@@ -9,12 +10,13 @@ export class Server{
     }
 
     init(){
+        require('../database')
         this.app = express()
         this.app.use(express.json())
     }
 
-    connectToDataBase(){
-        winston.info('Database is connected')
+    async connectToDataBase(){
+        await connectToDatabase()
     }
 
     routesManagement(){

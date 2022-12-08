@@ -3,7 +3,15 @@ import {
     validationResult
 } from './userValidators'
 
+import {
+    thatEmailDoesNotExist
+} from './createUserMiddlewares'
+
 export {
+    //USER VALIDATORS
     inputRoleIsValidRole,
-    validationResult
+    validationResult,
+
+    //CREATE USER MIDDLEWARES
+    thatEmailDoesNotExist
 }
